@@ -3,6 +3,7 @@ package com.ww.test;
 import java.util.Map;
 
 import org.junit.Test;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.core.env.ConfigurableEnvironment;
 
@@ -68,13 +69,33 @@ public class IOCTest {
 //		System.out.println(bean == bean2);
 //	}
 
-	@SuppressWarnings("resource")
 	@Test
 	public void test01(){
 		AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(MainConfig.class);
+		
+		//查看容器中所有的bean，getBeanDefinitionNames
 		String[] definitionNames = applicationContext.getBeanDefinitionNames();
 		for (String name : definitionNames) {
 			System.out.println(name);
 		}
 	}
+	
+	@Test
+	public void test00(){
+//		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("beans.xml");
+//		Person bean = (Person) applicationContext.getBean("person");
+//		System.out.println(bean);
+		
+		ApplicationContext applicationContext = new AnnotationConfigApplicationContext(MainConfig.class);
+//		Person bean = applicationContext.getBean(Person.class);
+//		System.out.println(bean);
+		
+		//获取bean的名字
+		String[] namesForType = applicationContext.getBeanNamesForType(Person.class);
+		for (String name : namesForType) {
+			System.out.println(name);
+		}
+	
+	}
+	
 }

@@ -16,5 +16,8 @@ public class Car {
 	public void detory(){
 		System.out.println("car ... detory...");
 	}
+	
+	
+	
 
 }

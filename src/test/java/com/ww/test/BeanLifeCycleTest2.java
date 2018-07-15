@@ -4,7 +4,7 @@ import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import com.ww.config.ConfigOfLifeCycle;
 
-public class BeanLifeCycleTest {
+public class BeanLifeCycleTest2 {
 
 	/**
 	 * 测试bean的生命周期方法

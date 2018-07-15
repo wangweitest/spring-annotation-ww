@@ -16,7 +16,7 @@ import com.ww.config.MainConfig2;
 
 
 
-public class IOCTest {
+public class IOCTest1 {
 	AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(MainConfig2.class);
 	
 	/**

@@ -14,9 +14,9 @@ import com.ww.dao.BookDao;
 @Service
 public class BookService {
 	
-	//@Qualifier("bookDao")
-	//@Autowired(required=false) //required=false:是否必须
-	@Resource(name="bookDao2")
+	//@Qualifier("bookDao2")
+	@Autowired(required=false) //required=false:是否必须
+	//@Resource(name="bookDao2")
 	private BookDao bookDao;
 
 	public BookDao getBookDao() {

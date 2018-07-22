@@ -22,7 +22,7 @@ import com.ww.service.BookService;
  * 			可以使用@Autowired(required=false);
  * 		5）、@Primary：让Spring进行自动装配的时候，默认使用首选的bean；和@bean一块使用的
  * 				也可以继续使用@Qualifier指定需要装配的bean的名字
- * 		优先级：@Qualifier>@Primary>默认
+ * 		====优先级：@Qualifier>@Primary>默认====
  * 		
  * 		BookService{
  * 			@Autowired
@@ -35,7 +35,7 @@ import com.ww.service.BookService;
  * 			没有能支持@Primary功能没有支持@Autowired（reqiured=false）;
  * 		@Inject:
  * 			需要导入javax.inject的包，和Autowired的功能一样。没有required=false的功能；
- *  @Autowired:Spring定义的； @Resource、@Inject都是java规范
+ *  ===@Autowired:Spring定义的； @Resource、@Inject都是java规范====
  * 	
  * AutowiredAnnotationBeanPostProcessor:解析完成自动装配功能；		
  * 
@@ -49,20 +49,22 @@ import com.ww.service.BookService;
  * 		把Spring底层一些组件注入到自定义的Bean中；
  * 		xxxAware：功能使用xxxProcessor；
  * 			ApplicationContextAware==》ApplicationContextAwareProcessor；
+ * 		===这个的例子可以看Dog类
+ * 		
  * 	
  * 		
  *
  */
 
-public class IOCTest_Autowired4 {
+public class IOCTest_Autowired5 {
 	AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(ConfigOfAurowired.class);
 	@Test
 	public void test01(){
 		
 		printBeans(applicationContext);
 		
-//		BookService bookService = applicationContext.getBean(BookService.class);
-//		System.out.println(bookService.getBookDao());
+		BookService bookService = applicationContext.getBean(BookService.class);
+		System.out.println(bookService.getBookDao());
 //		
 //		//标注在set方法上，构造器上
 //		Boss boss = applicationContext.getBean(Boss.class);
@@ -71,11 +73,11 @@ public class IOCTest_Autowired4 {
 //		System.out.println(car);
 		
 		//标注在参数上或者不标
-		Color color = applicationContext.getBean(Color.class);
-		System.out.println(color.getCar());
-		
-		Car car = applicationContext.getBean(Car.class);
-		System.out.println(car);
+//		Color color = applicationContext.getBean(Color.class);
+//		System.out.println(color.getCar());
+//		
+//		Car car = applicationContext.getBean(Car.class);
+//		System.out.println(car);
 		
 		applicationContext.close();
 	}

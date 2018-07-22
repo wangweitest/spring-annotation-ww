@@ -45,11 +45,11 @@ public class MainConfig2 {
 	 * 		懒加载：容器启动不创建对象。第一次使用(获取)Bean创建对象，并初始化；
 	 * 
 	 */
-	@Lazy(value=true)
+	//@Lazy(value=true)
 	//@Scope(value="prototype")
 	@Bean("person")
 	public Person person01(){
-		System.out.println("容器开始创建对象。。。。");
+		System.out.println("容器开始创建对象1。。。。");
 		return new Person("lisi", 20);
 	}
 	
@@ -62,17 +62,17 @@ public class MainConfig2 {
 	 * 如果是linux系统，给容器中注册("linus")
 	 * 可以通过修改run configrations中的arguments  -Dos.name=linux 进行测试系统的切换
 	 */
-	@Conditional(WindowsCondition.class)
+//	@Conditional(WindowsCondition.class)
 	@Bean("bill")
 	public Person person02(){
-		System.out.println("容器开始创建对象。。。。");
+		System.out.println("容器开始创建对象2。。。。");
 		return new Person("lisi", 20);
 	}
 	
-	@Conditional(LinuxCondition.class)
+//	@Conditional(LinuxCondition.class)
 	@Bean("linus")
 	public Person person03(){
-		System.out.println("容器开始创建对象。。。。");
+		System.out.println("容器开始创建对象3。。。。");
 		return new Person("lisi", 20);
 	}
 	

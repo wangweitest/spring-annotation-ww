@@ -66,26 +66,26 @@ import com.ww.bean.MyBeanPostProcessor;
 @Configuration
 public class ConfigOfLifeCycle {
 	
-	//1指定初始化和销毁方法
-	//@Scope("prototype")
+//	//1指定初始化和销毁方法
+//	//@Scope("prototype")
 	@Bean(initMethod="init",destroyMethod="detory")
 	public Car car(){
 		return new Car();
 	}
+//	
+//	//2通过让Bean实现InitializingBean（定义初始化逻辑），DisposableBean（定义销毁逻辑）;
+//	@Bean
+//	public Cat cat(){
+//		return new Cat();
+//	}
 	
-	//2通过让Bean实现InitializingBean（定义初始化逻辑），DisposableBean（定义销毁逻辑）;
-	@Bean
-	public Cat cat(){
-		return new Cat();
-	}
-	
-	//3使用JSR250；
-	//	@PostConstruct：在bean创建完成并且属性赋值完成；来执行初始化方法
-	//	@PreDestroy：在容器销毁bean之前通知我们进行清理工作
-	@Bean
-	public Dog dog(){
-		return new Dog();
-	}
+//	//3使用JSR250；
+//	//	@PostConstruct：在bean创建完成并且属性赋值完成；来执行初始化方法
+//	//	@PreDestroy：在容器销毁bean之前通知我们进行清理工作
+//	@Bean
+//	public Dog dog(){
+//		return new Dog();
+//	}
 
 	//4BeanPostProcessor
 	@Bean

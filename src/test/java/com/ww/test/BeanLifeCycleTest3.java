@@ -4,7 +4,7 @@ import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import com.ww.config.ConfigOfLifeCycle;
 
-public class BeanLifeCycleTest2 {
+public class BeanLifeCycleTest3 {
 
 	/**
 	 * 测试bean的生命周期方法
@@ -15,7 +15,7 @@ public class BeanLifeCycleTest2 {
 				ConfigOfLifeCycle.class);
 
 		System.out.println("容器创建完成...");
-		applicationContext.getBean("car");
+//		applicationContext.getBean("car");
 		
 		//查看容器中所有的bean，getBeanDefinitionNames
 		String[] definitionNames = applicationContext.getBeanDefinitionNames();

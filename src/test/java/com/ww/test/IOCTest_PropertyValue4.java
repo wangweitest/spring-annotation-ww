@@ -7,7 +7,7 @@ import org.springframework.core.env.ConfigurableEnvironment;
 import com.ww.bean.Person;
 import com.ww.config.ConfigOfPropertyValues;
 
-public class IOCTest_PropertyValue3 {
+public class IOCTest_PropertyValue4 {
 	AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(ConfigOfPropertyValues.class);
 	@Test
 	public void test01(){

@@ -13,7 +13,7 @@ import com.ww.dao.BookDao;
 
 @Configuration
 @ComponentScan(value={"com.ww.service","com.ww.dao","com.ww.bean"})
-public class ConfigOfAurowired {
+public class ConfigOfAutowired {
 	
 	//@Primary
 	@Bean

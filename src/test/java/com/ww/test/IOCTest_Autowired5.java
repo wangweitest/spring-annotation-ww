@@ -6,7 +6,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import com.ww.bean.Boss;
 import com.ww.bean.Car;
 import com.ww.bean.Color;
-import com.ww.config.ConfigOfAurowired;
+import com.ww.config.ConfigOfAutowired;
 import com.ww.service.BookService;
 
 /**
@@ -57,7 +57,7 @@ import com.ww.service.BookService;
  */
 
 public class IOCTest_Autowired5 {
-	AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(ConfigOfAurowired.class);
+	AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(ConfigOfAutowired.class);
 	@Test
 	public void test01(){
 		

@@ -1,8 +1,6 @@
 package com.ww.config;
 
-
 import javax.sql.DataSource;
-
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.EmbeddedValueResolverAware;
 import org.springframework.context.annotation.Bean;
@@ -15,23 +13,23 @@ import com.ww.bean.Yellow;
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 
 /**
- * Profile£º
- * 		SpringÎªÎÒÃÇÌá¹©µÄ¿ÉÒÔ¸ù¾Ýµ±Ç°»·¾³£¬¶¯Ì¬µÄ¼¤»îºÍÇÐ»»Ò»ÏµÁÐ×é¼þµÄ¹¦ÄÜ£»
+ * Profileï¼š
+ * 		Springä¸ºæˆ‘ä»¬æä¾›çš„å¯ä»¥æ ¹æ®å½“å‰çŽ¯å¢ƒï¼ŒåŠ¨æ€çš„æ¿€æ´»å’Œåˆ‡æ¢ä¸€ç³»åˆ—ç»„ä»¶çš„åŠŸèƒ½ï¼›
  * 
- * ¿ª·¢»·¾³¡¢²âÊÔ»·¾³¡¢Éú²ú»·¾³£»
- * Êý¾ÝÔ´£º(/A)(/B)(/C)£»
+ * å¼€å‘çŽ¯å¢ƒã€æµ‹è¯•çŽ¯å¢ƒã€ç”Ÿäº§çŽ¯å¢ƒï¼›
+ * æ•°æ®æºï¼š(/A)(/B)(/C)ï¼›
  * 
- * ¸´Ï°ÁËÈýÖÖÈ¡propertiesÅäÖÃÎÄ¼þÖÐµÄÊôÐÔµÄ·½·¨£º
+ * å¤ä¹ äº†ä¸‰ç§å–propertiesé…ç½®æ–‡ä»¶ä¸­çš„å±žæ€§çš„æ–¹æ³•ï¼š
  * 1.@Value
  * 2.EmbeddedValueResolverAware
  * 3.applicationContext.getEnvironment()
  * 
  * 
- * @Profile£ºÖ¸¶¨×é¼þÔÚÄÄ¸ö»·¾³µÄÇé¿öÏÂ²ÅÄÜ±»×¢²áµ½ÈÝÆ÷ÖÐ£¬²»Ö¸¶¨£¬ÈÎºÎ»·¾³ÏÂ¶¼ÄÜ×¢²áÕâ¸ö×é¼þ
+ * @Profileï¼šæŒ‡å®šç»„ä»¶åœ¨å“ªä¸ªçŽ¯å¢ƒçš„æƒ…å†µä¸‹æ‰èƒ½è¢«æ³¨å†Œåˆ°å®¹å™¨ä¸­ï¼Œä¸æŒ‡å®šï¼Œä»»ä½•çŽ¯å¢ƒä¸‹éƒ½èƒ½æ³¨å†Œè¿™ä¸ªç»„ä»¶
  * 
- * 1£©¡¢¼ÓÁË»·¾³±êÊ¶µÄbean£¬Ö»ÓÐÕâ¸ö»·¾³±»¼¤»îµÄÊ±ºò²ÅÄÜ×¢²áµ½ÈÝÆ÷ÖÐ¡£Ä¬ÈÏÊÇdefault»·¾³
- * 2£©¡¢Ð´ÔÚÅäÖÃÀàÉÏ£¬Ö»ÓÐÊÇÖ¸¶¨µÄ»·¾³µÄÊ±ºò£¬Õû¸öÅäÖÃÀàÀïÃæµÄËùÓÐÅäÖÃ²ÅÄÜ¿ªÊ¼ÉúÐ§
- * 3£©¡¢Ã»ÓÐ±ê×¢»·¾³±êÊ¶µÄbeanÔÚ£¬ÈÎºÎ»·¾³ÏÂ¶¼ÊÇ¼ÓÔØµÄ£»
+ * 1ï¼‰ã€åŠ äº†çŽ¯å¢ƒæ ‡è¯†çš„beanï¼Œåªæœ‰è¿™ä¸ªçŽ¯å¢ƒè¢«æ¿€æ´»çš„æ—¶å€™æ‰èƒ½æ³¨å†Œåˆ°å®¹å™¨ä¸­ã€‚é»˜è®¤æ˜¯defaultçŽ¯å¢ƒ
+ * 2ï¼‰ã€å†™åœ¨é…ç½®ç±»ä¸Šï¼Œåªæœ‰æ˜¯æŒ‡å®šçš„çŽ¯å¢ƒçš„æ—¶å€™ï¼Œæ•´ä¸ªé…ç½®ç±»é‡Œé¢çš„æ‰€æœ‰é…ç½®æ‰èƒ½å¼€å§‹ç”Ÿæ•ˆ
+ * 3ï¼‰ã€æ²¡æœ‰æ ‡æ³¨çŽ¯å¢ƒæ ‡è¯†çš„beanåœ¨ï¼Œä»»ä½•çŽ¯å¢ƒä¸‹éƒ½æ˜¯åŠ è½½çš„ï¼›
  */
 
 @PropertySource("classpath:/dbconfig.properties")

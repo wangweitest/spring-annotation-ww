@@ -7,23 +7,23 @@ import com.ww.config.ConfigOfLifeCycle;
 public class BeanLifeCycleTest3 {
 
 	/**
-	 * ²âÊÔbeanµÄÉúÃüÖÜÆÚ·½·¨
+	 * æµ‹è¯•beançš„ç”Ÿå‘½å‘¨æœŸæ–¹æ³•
 	 */
 	@Test
 	public void test01() {
 		AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(
 				ConfigOfLifeCycle.class);
 
-		System.out.println("ÈİÆ÷´´½¨Íê³É...");
+		System.out.println("å®¹å™¨åˆ›å»ºå®Œæˆ...");
 //		applicationContext.getBean("car");
 		
-		//²é¿´ÈİÆ÷ÖĞËùÓĞµÄbean£¬getBeanDefinitionNames
+		//æŸ¥çœ‹å®¹å™¨ä¸­æ‰€æœ‰çš„beanï¼ŒgetBeanDefinitionNames
 		String[] definitionNames = applicationContext.getBeanDefinitionNames();
 		for (String name : definitionNames) {
 			System.out.println(name);
 		}
 		
-		// ¹Ø±ÕÈİÆ÷
+		// å…³é—­å®¹å™¨
 		applicationContext.close();
 	}
 

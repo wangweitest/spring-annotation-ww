@@ -10,46 +10,46 @@ import com.ww.config.ConfigOfAutowired;
 import com.ww.service.BookService;
 
 /**
- * ×Ô¶¯×°Åä;
- * 		SpringÀûÓÃÒÀÀµ×¢Èë£¨DI£©£¬Íê³É¶ÔIOCÈÝÆ÷ÖÐÖÐ¸÷¸ö×é¼þµÄÒÀÀµ¹ØÏµ¸³Öµ£»
+ * è‡ªåŠ¨è£…é…;
+ * 		Springåˆ©ç”¨ä¾èµ–æ³¨å…¥ï¼ˆDIï¼‰ï¼Œå®Œæˆå¯¹IOCå®¹å™¨ä¸­ä¸­å„ä¸ªç»„ä»¶çš„ä¾èµ–å…³ç³»èµ‹å€¼ï¼›
  * 
- * 1£©¡¢@Autowired£º×Ô¶¯×¢Èë£º
- * 		1£©¡¢Ä¬ÈÏÓÅÏÈ°´ÕÕÀàÐÍÈ¥ÈÝÆ÷ÖÐÕÒ¶ÔÓ¦µÄ×é¼þ:applicationContext.getBean(BookDao.class);ÕÒµ½¾Í¸³Öµ
- * 		2£©¡¢Èç¹ûÕÒµ½¶à¸öÏàÍ¬ÀàÐÍµÄ×é¼þ£¬ÔÙ½«ÊôÐÔµÄÃû³Æ×÷Îª×é¼þµÄidÈ¥ÈÝÆ÷ÖÐ²éÕÒ
+ * 1ï¼‰ã€@Autowiredï¼šè‡ªåŠ¨æ³¨å…¥ï¼š
+ * 		1ï¼‰ã€é»˜è®¤ä¼˜å…ˆæŒ‰ç…§ç±»åž‹åŽ»å®¹å™¨ä¸­æ‰¾å¯¹åº”çš„ç»„ä»¶:applicationContext.getBean(BookDao.class);æ‰¾åˆ°å°±èµ‹å€¼
+ * 		2ï¼‰ã€å¦‚æžœæ‰¾åˆ°å¤šä¸ªç›¸åŒç±»åž‹çš„ç»„ä»¶ï¼Œå†å°†å±žæ€§çš„åç§°ä½œä¸ºç»„ä»¶çš„idåŽ»å®¹å™¨ä¸­æŸ¥æ‰¾
  * 							applicationContext.getBean("bookDao")
- * 		3£©¡¢@Qualifier("bookDao")£ºÊ¹ÓÃ@QualifierÖ¸¶¨ÐèÒª×°ÅäµÄ×é¼þµÄid£¬¶ø²»ÊÇÊ¹ÓÃÊôÐÔÃû£¬ºÍ@autowiredÒ»¿éÊ¹ÓÃµÄ
- * 		4£©¡¢×Ô¶¯×°ÅäÄ¬ÈÏÒ»¶¨Òª½«ÊôÐÔ¸³ÖµºÃ£¬Ã»ÓÐ¾Í»á±¨´í£»
- * 			¿ÉÒÔÊ¹ÓÃ@Autowired(required=false);
- * 		5£©¡¢@Primary£ºÈÃSpring½øÐÐ×Ô¶¯×°ÅäµÄÊ±ºò£¬Ä¬ÈÏÊ¹ÓÃÊ×Ñ¡µÄbean£»ºÍ@beanÒ»¿éÊ¹ÓÃµÄ
- * 				Ò²¿ÉÒÔ¼ÌÐøÊ¹ÓÃ@QualifierÖ¸¶¨ÐèÒª×°ÅäµÄbeanµÄÃû×Ö
- * 		====ÓÅÏÈ¼¶£º@Qualifier>@Primary>Ä¬ÈÏ====
+ * 		3ï¼‰ã€@Qualifier("bookDao")ï¼šä½¿ç”¨@QualifieræŒ‡å®šéœ€è¦è£…é…çš„ç»„ä»¶çš„idï¼Œè€Œä¸æ˜¯ä½¿ç”¨å±žæ€§åï¼Œå’Œ@autowiredä¸€å—ä½¿ç”¨çš„
+ * 		4ï¼‰ã€è‡ªåŠ¨è£…é…é»˜è®¤ä¸€å®šè¦å°†å±žæ€§èµ‹å€¼å¥½ï¼Œæ²¡æœ‰å°±ä¼šæŠ¥é”™ï¼›
+ * 			å¯ä»¥ä½¿ç”¨@Autowired(required=false);
+ * 		5ï¼‰ã€@Primaryï¼šè®©Springè¿›è¡Œè‡ªåŠ¨è£…é…çš„æ—¶å€™ï¼Œé»˜è®¤ä½¿ç”¨é¦–é€‰çš„beanï¼›å’Œ@beanä¸€å—ä½¿ç”¨çš„
+ * 				ä¹Ÿå¯ä»¥ç»§ç»­ä½¿ç”¨@QualifieræŒ‡å®šéœ€è¦è£…é…çš„beançš„åå­—
+ * 		====ä¼˜å…ˆçº§ï¼š@Qualifier>@Primary>é»˜è®¤====
  * 		
  * 		BookService{
  * 			@Autowired
  * 			BookDao  bookDao;
  * 		}
  * 
- * 2£©¡¢Spring»¹Ö§³ÖÊ¹ÓÃ@Resource(JSR250)ºÍ@Inject(JSR330)[java¹æ·¶µÄ×¢½â]
+ * 2ï¼‰ã€Springè¿˜æ”¯æŒä½¿ç”¨@Resource(JSR250)å’Œ@Inject(JSR330)[javaè§„èŒƒçš„æ³¨è§£]
  * 		@Resource:
- * 			¿ÉÒÔºÍ@AutowiredÒ»ÑùÊµÏÖ×Ô¶¯×°Åä¹¦ÄÜ£»Ä¬ÈÏÊÇ°´ÕÕ×é¼þÃû³Æ½øÐÐ×°ÅäµÄ£»
- * 			Ã»ÓÐÄÜÖ§³Ö@Primary¹¦ÄÜÃ»ÓÐÖ§³Ö@Autowired£¨reqiured=false£©;
+ * 			å¯ä»¥å’Œ@Autowiredä¸€æ ·å®žçŽ°è‡ªåŠ¨è£…é…åŠŸèƒ½ï¼›é»˜è®¤æ˜¯æŒ‰ç…§ç»„ä»¶åç§°è¿›è¡Œè£…é…çš„ï¼›
+ * 			æ²¡æœ‰èƒ½æ”¯æŒ@PrimaryåŠŸèƒ½æ²¡æœ‰æ”¯æŒ@Autowiredï¼ˆreqiured=falseï¼‰;
  * 		@Inject:
- * 			ÐèÒªµ¼Èëjavax.injectµÄ°ü£¬ºÍAutowiredµÄ¹¦ÄÜÒ»Ñù¡£Ã»ÓÐrequired=falseµÄ¹¦ÄÜ£»
- *  ===@Autowired:Spring¶¨ÒåµÄ£» @Resource¡¢@Inject¶¼ÊÇjava¹æ·¶====
+ * 			éœ€è¦å¯¼å…¥javax.injectçš„åŒ…ï¼Œå’ŒAutowiredçš„åŠŸèƒ½ä¸€æ ·ã€‚æ²¡æœ‰required=falseçš„åŠŸèƒ½ï¼›
+ *  ===@Autowired:Springå®šä¹‰çš„ï¼› @Resourceã€@Injectéƒ½æ˜¯javaè§„èŒƒ====
  * 	
- * AutowiredAnnotationBeanPostProcessor:½âÎöÍê³É×Ô¶¯×°Åä¹¦ÄÜ£»		
+ * AutowiredAnnotationBeanPostProcessor:è§£æžå®Œæˆè‡ªåŠ¨è£…é…åŠŸèƒ½ï¼›		
  * 
- * 3£©¡¢ @Autowired:¹¹ÔìÆ÷£¬²ÎÊý£¬·½·¨£¬ÊôÐÔ£»¶¼ÊÇ´ÓÈÝÆ÷ÖÐ»ñÈ¡²ÎÊý×é¼þµÄÖµ
- * 		1£©¡¢[±ê×¢ÔÚ·½·¨Î»ÖÃ]£º@Bean+·½·¨²ÎÊý£»²ÎÊý´ÓÈÝÆ÷ÖÐ»ñÈ¡;Ä¬ÈÏ²»Ð´@AutowiredÐ§¹ûÊÇÒ»ÑùµÄ£»¶¼ÄÜ×Ô¶¯×°Åä
- * 		2£©¡¢[±êÔÚ¹¹ÔìÆ÷ÉÏ]£ºÈç¹û×é¼þÖ»ÓÐÒ»¸öÓÐ²Î¹¹ÔìÆ÷£¬Õâ¸öÓÐ²Î¹¹ÔìÆ÷µÄ@Autowired¿ÉÒÔÊ¡ÂÔ£¬²ÎÊýÎ»ÖÃµÄ×é¼þ»¹ÊÇ¿ÉÒÔ×Ô¶¯´ÓÈÝÆ÷ÖÐ»ñÈ¡
- * 		3£©¡¢·ÅÔÚ²ÎÊýÎ»ÖÃ£º
+ * 3ï¼‰ã€ @Autowired:æž„é€ å™¨ï¼Œå‚æ•°ï¼Œæ–¹æ³•ï¼Œå±žæ€§ï¼›éƒ½æ˜¯ä»Žå®¹å™¨ä¸­èŽ·å–å‚æ•°ç»„ä»¶çš„å€¼
+ * 		1ï¼‰ã€[æ ‡æ³¨åœ¨æ–¹æ³•ä½ç½®]ï¼š@Bean+æ–¹æ³•å‚æ•°ï¼›å‚æ•°ä»Žå®¹å™¨ä¸­èŽ·å–;é»˜è®¤ä¸å†™@Autowiredæ•ˆæžœæ˜¯ä¸€æ ·çš„ï¼›éƒ½èƒ½è‡ªåŠ¨è£…é…
+ * 		2ï¼‰ã€[æ ‡åœ¨æž„é€ å™¨ä¸Š]ï¼šå¦‚æžœç»„ä»¶åªæœ‰ä¸€ä¸ªæœ‰å‚æž„é€ å™¨ï¼Œè¿™ä¸ªæœ‰å‚æž„é€ å™¨çš„@Autowiredå¯ä»¥çœç•¥ï¼Œå‚æ•°ä½ç½®çš„ç»„ä»¶è¿˜æ˜¯å¯ä»¥è‡ªåŠ¨ä»Žå®¹å™¨ä¸­èŽ·å–
+ * 		3ï¼‰ã€æ”¾åœ¨å‚æ•°ä½ç½®ï¼š
  * 
- * 4£©¡¢×Ô¶¨Òå×é¼þÏëÒªÊ¹ÓÃSpringÈÝÆ÷µ×²ãµÄÒ»Ð©×é¼þ£¨ApplicationContext£¬BeanFactory£¬xxx£©£»
- * 		×Ô¶¨Òå×é¼þÊµÏÖxxxAware£»ÔÚ´´½¨¶ÔÏóµÄÊ±ºò£¬»áµ÷ÓÃ½Ó¿Ú¹æ¶¨µÄ·½·¨×¢ÈëÏà¹Ø×é¼þ£»Aware£»
- * 		°ÑSpringµ×²ãÒ»Ð©×é¼þ×¢Èëµ½×Ô¶¨ÒåµÄBeanÖÐ£»
- * 		xxxAware£º¹¦ÄÜÊ¹ÓÃxxxProcessor£»
- * 			ApplicationContextAware==¡·ApplicationContextAwareProcessor£»
- * 		===Õâ¸öµÄÀý×Ó¿ÉÒÔ¿´DogÀà
+ * 4ï¼‰ã€è‡ªå®šä¹‰ç»„ä»¶æƒ³è¦ä½¿ç”¨Springå®¹å™¨åº•å±‚çš„ä¸€äº›ç»„ä»¶ï¼ˆApplicationContextï¼ŒBeanFactoryï¼Œxxxï¼‰ï¼›
+ * 		è‡ªå®šä¹‰ç»„ä»¶å®žçŽ°xxxAwareï¼›åœ¨åˆ›å»ºå¯¹è±¡çš„æ—¶å€™ï¼Œä¼šè°ƒç”¨æŽ¥å£è§„å®šçš„æ–¹æ³•æ³¨å…¥ç›¸å…³ç»„ä»¶ï¼›Awareï¼›
+ * 		æŠŠSpringåº•å±‚ä¸€äº›ç»„ä»¶æ³¨å…¥åˆ°è‡ªå®šä¹‰çš„Beanä¸­ï¼›
+ * 		xxxAwareï¼šåŠŸèƒ½ä½¿ç”¨xxxProcessorï¼›
+ * 			ApplicationContextAware==ã€‹ApplicationContextAwareProcessorï¼›
+ * 		===è¿™ä¸ªçš„ä¾‹å­å¯ä»¥çœ‹Dogç±»
  * 		
  * 	
  * 		
@@ -66,13 +66,13 @@ public class IOCTest_Autowired5 {
 		BookService bookService = applicationContext.getBean(BookService.class);
 		System.out.println(bookService.getBookDao());
 //		
-//		//±ê×¢ÔÚset·½·¨ÉÏ£¬¹¹ÔìÆ÷ÉÏ
+//		//æ ‡æ³¨åœ¨setæ–¹æ³•ä¸Šï¼Œæž„é€ å™¨ä¸Š
 //		Boss boss = applicationContext.getBean(Boss.class);
 //		System.out.println(boss);
 //		Car car = applicationContext.getBean(Car.class);
 //		System.out.println(car);
 		
-		//±ê×¢ÔÚ²ÎÊýÉÏ»òÕß²»±ê
+		//æ ‡æ³¨åœ¨å‚æ•°ä¸Šæˆ–è€…ä¸æ ‡
 //		Color color = applicationContext.getBean(Color.class);
 //		System.out.println(color.getCar());
 //		

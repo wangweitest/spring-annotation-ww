@@ -25,68 +25,68 @@ import com.ww.condition.WindowsCondition;
 @Import(value={Red.class,MyImportSelector.class,MyImportBeanDefinitionRegistrar.class})
 public class MainConfig2 {
 	
-	//Ä¬ÈÏÊÇµ¥ÊµÀıµÄ
+	//é»˜è®¤æ˜¯å•å®ä¾‹çš„
 	/**
 	 * ConfigurableBeanFactory#SCOPE_PROTOTYPE    
 	 * @see ConfigurableBeanFactory#SCOPE_SINGLETON  
 	 * @see org.springframework.web.context.WebApplicationContext#SCOPE_REQUEST  request
 	 * @see org.springframework.web.context.WebApplicationContext#SCOPE_SESSION	 sesssion
 	 * @return\
-	 * @Scope:µ÷Õû×÷ÓÃÓò
-	 * prototype£º¶àÊµÀıµÄ£ºiocÈİÆ÷Æô¶¯²¢²»»áÈ¥µ÷ÓÃ·½·¨´´½¨¶ÔÏó·ÅÔÚÈİÆ÷ÖĞ¡£
-	 * 					Ã¿´Î»ñÈ¡µÄÊ±ºò²Å»áµ÷ÓÃ·½·¨´´½¨¶ÔÏó£»
-	 * singleton£ºµ¥ÊµÀıµÄ£¨Ä¬ÈÏÖµ£©£ºiocÈİÆ÷Æô¶¯»áµ÷ÓÃ·½·¨´´½¨¶ÔÏó·Åµ½iocÈİÆ÷ÖĞ¡£
-	 * 			ÒÔºóÃ¿´Î»ñÈ¡¾ÍÊÇÖ±½Ó´ÓÈİÆ÷£¨map.get()£©ÖĞÄÃ£¬
-	 * request£ºÍ¬Ò»´ÎÇëÇó´´½¨Ò»¸öÊµÀı
-	 * session£ºÍ¬Ò»¸ösession´´½¨Ò»¸öÊµÀı
+	 * @Scope:è°ƒæ•´ä½œç”¨åŸŸ
+	 * prototypeï¼šå¤šå®ä¾‹çš„ï¼šiocå®¹å™¨å¯åŠ¨å¹¶ä¸ä¼šå»è°ƒç”¨æ–¹æ³•åˆ›å»ºå¯¹è±¡æ”¾åœ¨å®¹å™¨ä¸­ã€‚
+	 * 					æ¯æ¬¡è·å–çš„æ—¶å€™æ‰ä¼šè°ƒç”¨æ–¹æ³•åˆ›å»ºå¯¹è±¡ï¼›
+	 * singletonï¼šå•å®ä¾‹çš„ï¼ˆé»˜è®¤å€¼ï¼‰ï¼šiocå®¹å™¨å¯åŠ¨ä¼šè°ƒç”¨æ–¹æ³•åˆ›å»ºå¯¹è±¡æ”¾åˆ°iocå®¹å™¨ä¸­ã€‚
+	 * 			ä»¥åæ¯æ¬¡è·å–å°±æ˜¯ç›´æ¥ä»å®¹å™¨ï¼ˆmap.get()ï¼‰ä¸­æ‹¿ï¼Œ
+	 * requestï¼šåŒä¸€æ¬¡è¯·æ±‚åˆ›å»ºä¸€ä¸ªå®ä¾‹
+	 * sessionï¼šåŒä¸€ä¸ªsessionåˆ›å»ºä¸€ä¸ªå®ä¾‹
 	 * 
-	 * ÀÁ¼ÓÔØ£º
-	 * 		µ¥ÊµÀıbean£ºÄ¬ÈÏÔÚÈİÆ÷Æô¶¯µÄÊ±ºò´´½¨¶ÔÏó£»
-	 * 		ÀÁ¼ÓÔØ£ºÈİÆ÷Æô¶¯²»´´½¨¶ÔÏó¡£µÚÒ»´ÎÊ¹ÓÃ(»ñÈ¡)Bean´´½¨¶ÔÏó£¬²¢³õÊ¼»¯£»
+	 * æ‡’åŠ è½½ï¼š
+	 * 		å•å®ä¾‹beanï¼šé»˜è®¤åœ¨å®¹å™¨å¯åŠ¨çš„æ—¶å€™åˆ›å»ºå¯¹è±¡ï¼›
+	 * 		æ‡’åŠ è½½ï¼šå®¹å™¨å¯åŠ¨ä¸åˆ›å»ºå¯¹è±¡ã€‚ç¬¬ä¸€æ¬¡ä½¿ç”¨(è·å–)Beanåˆ›å»ºå¯¹è±¡ï¼Œå¹¶åˆå§‹åŒ–ï¼›
 	 * 
 	 */
 	//@Lazy(value=true)
 	//@Scope(value="prototype")
 	@Bean("person")
 	public Person person01(){
-		System.out.println("ÈİÆ÷¿ªÊ¼´´½¨¶ÔÏó1¡£¡£¡£¡£");
+		System.out.println("å®¹å™¨å¼€å§‹åˆ›å»ºå¯¹è±¡1ã€‚ã€‚ã€‚ã€‚");
 		return new Person("lisi", 20);
 	}
 	
 	
 	/**
-	 * @Conditional({Condition}) £º °´ÕÕÒ»¶¨µÄÌõ¼ş½øĞĞÅĞ¶Ï£¬Âú×ãÌõ¼ş¸øÈİÆ÷ÖĞ×¢²ábean¡£
-	 * ¿ÉÒÔ·ÅÔÚÀàºÍ·½·¨ÉÏ£¬·½·¨ÊÇÕı¶Ôµ±Ç°·½·¨£¬ÀàÊÇÕë¶Ôµ±Ç°Àà£¬²»Âú×ãÊ±£¬ÀàÖĞËùÓĞµÄ·½·¨¶¼²»»á×¢²á
+	 * @Conditional({Condition}) ï¼š æŒ‰ç…§ä¸€å®šçš„æ¡ä»¶è¿›è¡Œåˆ¤æ–­ï¼Œæ»¡è¶³æ¡ä»¶ç»™å®¹å™¨ä¸­æ³¨å†Œbeanã€‚
+	 * å¯ä»¥æ”¾åœ¨ç±»å’Œæ–¹æ³•ä¸Šï¼Œæ–¹æ³•æ˜¯æ­£å¯¹å½“å‰æ–¹æ³•ï¼Œç±»æ˜¯é’ˆå¯¹å½“å‰ç±»ï¼Œä¸æ»¡è¶³æ—¶ï¼Œç±»ä¸­æ‰€æœ‰çš„æ–¹æ³•éƒ½ä¸ä¼šæ³¨å†Œ
 	 * 
-	 * Èç¹ûÏµÍ³ÊÇwindows£¬¸øÈİÆ÷ÖĞ×¢²á("bill")
-	 * Èç¹ûÊÇlinuxÏµÍ³£¬¸øÈİÆ÷ÖĞ×¢²á("linus")
-	 * ¿ÉÒÔÍ¨¹ıĞŞ¸Ärun configrationsÖĞµÄarguments  -Dos.name=linux ½øĞĞ²âÊÔÏµÍ³µÄÇĞ»»
+	 * å¦‚æœç³»ç»Ÿæ˜¯windowsï¼Œç»™å®¹å™¨ä¸­æ³¨å†Œ("bill")
+	 * å¦‚æœæ˜¯linuxç³»ç»Ÿï¼Œç»™å®¹å™¨ä¸­æ³¨å†Œ("linus")
+	 * å¯ä»¥é€šè¿‡ä¿®æ”¹run configrationsä¸­çš„arguments  -Dos.name=linux è¿›è¡Œæµ‹è¯•ç³»ç»Ÿçš„åˆ‡æ¢
 	 */
 //	@Conditional(WindowsCondition.class)
 	@Bean("bill")
 	public Person person02(){
-		System.out.println("ÈİÆ÷¿ªÊ¼´´½¨¶ÔÏó2¡£¡£¡£¡£");
+		System.out.println("å®¹å™¨å¼€å§‹åˆ›å»ºå¯¹è±¡2ã€‚ã€‚ã€‚ã€‚");
 		return new Person("lisi", 20);
 	}
 	
 //	@Conditional(LinuxCondition.class)
 	@Bean("linus")
 	public Person person03(){
-		System.out.println("ÈİÆ÷¿ªÊ¼´´½¨¶ÔÏó3¡£¡£¡£¡£");
+		System.out.println("å®¹å™¨å¼€å§‹åˆ›å»ºå¯¹è±¡3ã€‚ã€‚ã€‚ã€‚");
 		return new Person("lisi", 20);
 	}
 	
 	/**
-	 * ¸øÈİÆ÷ÖĞ×¢²á×é¼ş£»
-	 * 1£©¡¢°üÉ¨Ãè+×é¼ş±ê×¢×¢½â£¨@Controller/@Service/@Repository/@Component£©[×Ô¼ºĞ´µÄÀà]
-	 * 2£©¡¢@Bean[µ¼ÈëµÄµÚÈı·½°üÀïÃæµÄ×é¼ş]
-	 * 3£©¡¢@Import[¿ìËÙ¸øÈİÆ÷ÖĞµ¼ÈëÒ»¸ö×é¼ş]£¬·ÅÔÚÅäÖÃÀàÉÏ
-	 * 		1£©¡¢@Import(Òªµ¼Èëµ½ÈİÆ÷ÖĞµÄ×é¼ş)£»ÈİÆ÷ÖĞ¾Í»á×Ô¶¯×¢²áÕâ¸ö×é¼ş£¬idÄ¬ÈÏÊÇÈ«ÀàÃû
-	 * 		2£©¡¢ImportSelector:·µ»ØĞèÒªµ¼ÈëµÄ×é¼şµÄÈ«ÀàÃûÊı×é£»
-	 * 		3£©¡¢ImportBeanDefinitionRegistrar:ÊÖ¶¯×¢²ábeanµ½ÈİÆ÷ÖĞ
-	 * 4£©¡¢Ê¹ÓÃSpringÌá¹©µÄ FactoryBean£¨¹¤³§Bean£©;
-	 * 		1£©¡¢Ä¬ÈÏ»ñÈ¡µ½µÄÊÇ¹¤³§beanµ÷ÓÃgetObject´´½¨µÄ¶ÔÏó
-	 * 		2£©¡¢Òª»ñÈ¡¹¤³§Bean±¾Éí£¬ÎÒÃÇĞèÒª¸øidÇ°Ãæ¼ÓÒ»¸ö&
+	 * ç»™å®¹å™¨ä¸­æ³¨å†Œç»„ä»¶ï¼›
+	 * 1ï¼‰ã€åŒ…æ‰«æ+ç»„ä»¶æ ‡æ³¨æ³¨è§£ï¼ˆ@Controller/@Service/@Repository/@Componentï¼‰[è‡ªå·±å†™çš„ç±»]
+	 * 2ï¼‰ã€@Bean[å¯¼å…¥çš„ç¬¬ä¸‰æ–¹åŒ…é‡Œé¢çš„ç»„ä»¶]
+	 * 3ï¼‰ã€@Import[å¿«é€Ÿç»™å®¹å™¨ä¸­å¯¼å…¥ä¸€ä¸ªç»„ä»¶]ï¼Œæ”¾åœ¨é…ç½®ç±»ä¸Š
+	 * 		1ï¼‰ã€@Import(è¦å¯¼å…¥åˆ°å®¹å™¨ä¸­çš„ç»„ä»¶)ï¼›å®¹å™¨ä¸­å°±ä¼šè‡ªåŠ¨æ³¨å†Œè¿™ä¸ªç»„ä»¶ï¼Œidé»˜è®¤æ˜¯å…¨ç±»å
+	 * 		2ï¼‰ã€ImportSelector:è¿”å›éœ€è¦å¯¼å…¥çš„ç»„ä»¶çš„å…¨ç±»åæ•°ç»„ï¼›
+	 * 		3ï¼‰ã€ImportBeanDefinitionRegistrar:æ‰‹åŠ¨æ³¨å†Œbeanåˆ°å®¹å™¨ä¸­
+	 * 4ï¼‰ã€ä½¿ç”¨Springæä¾›çš„ FactoryBeanï¼ˆå·¥å‚Beanï¼‰;
+	 * 		1ï¼‰ã€é»˜è®¤è·å–åˆ°çš„æ˜¯å·¥å‚beanè°ƒç”¨getObjectåˆ›å»ºçš„å¯¹è±¡
+	 * 		2ï¼‰ã€è¦è·å–å·¥å‚Beanæœ¬èº«ï¼Œæˆ‘ä»¬éœ€è¦ç»™idå‰é¢åŠ ä¸€ä¸ª&
 	 * 			&colorFactoryBean
 	 */
 	@Bean

@@ -7,7 +7,7 @@ import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.stereotype.Component;
 
-//¿ÉÒÔ¿´³ö¶àÖÖÉúÃüÖÜÆÚ·½·¨µÄÖ´ĞĞË³Ğò
+//å¯ä»¥çœ‹å‡ºå¤šç§ç”Ÿå‘½å‘¨æœŸæ–¹æ³•çš„æ‰§è¡Œé¡ºåº
 @Component
 public class Car /**implements InitializingBean,DisposableBean**/{
 	
@@ -37,13 +37,13 @@ public class Car /**implements InitializingBean,DisposableBean**/{
 //	}
 //	
 ////----------------------------------------------------------------------
-//	//¶ÔÏó´´½¨²¢¸³ÖµÖ®ºóµ÷ÓÃ
+//	//å¯¹è±¡åˆ›å»ºå¹¶èµ‹å€¼ä¹‹åè°ƒç”¨
 //	@PostConstruct
 //	public void postConstruct(){
 //		System.out.println("car....@PostConstruct...");
 //	}
 //	
-//	//ÈİÆ÷ÒÆ³ı¶ÔÏóÖ®Ç°
+//	//å®¹å™¨ç§»é™¤å¯¹è±¡ä¹‹å‰
 //	@PreDestroy
 //	public void preDestroy(){
 //		System.out.println("car....@PreDestroy...");

@@ -8,13 +8,13 @@ import com.ww.config.MainConfig;
 
 public class IOCTest1 {
 	/**
-		 * ²âÊÔ@ComponentScan
+		 * æµ‹è¯•@ComponentScan
 		 */
 		@Test
 		public void test01(){
 			AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(MainConfig.class);
 			
-			//²é¿´ÈİÆ÷ÖĞËùÓĞµÄbean£¬getBeanDefinitionNames
+			//æŸ¥çœ‹å®¹å™¨ä¸­æ‰€æœ‰çš„beanï¼ŒgetBeanDefinitionNames
 			String[] definitionNames = applicationContext.getBeanDefinitionNames();
 			for (String name : definitionNames) {
 				System.out.println(name);
@@ -23,7 +23,7 @@ public class IOCTest1 {
 		
 		
 		/**
-		 * ÓÃ@bean×¢²áÊ±beanµÄÃû×Ö£º@Bean ¸øÈİÆ÷ÖĞ×¢²áÒ»¸öBean;ÀàĞÍÎª·µ»ØÖµµÄÀàĞÍ£¬idÄ¬ÈÏÊÇÓÃ·½·¨Ãû×÷Îªid
+		 * ç”¨@beanæ³¨å†Œæ—¶beançš„åå­—ï¼š@Bean ç»™å®¹å™¨ä¸­æ³¨å†Œä¸€ä¸ªBean;ç±»å‹ä¸ºè¿”å›å€¼çš„ç±»å‹ï¼Œidé»˜è®¤æ˜¯ç”¨æ–¹æ³•åä½œä¸ºid
 		 */
 		@Test
 		public void test00(){
@@ -35,13 +35,13 @@ public class IOCTest1 {
 	//		Person bean = applicationContext.getBean(Person.class);
 	//		System.out.println(bean);
 			
-			//»ñÈ¡beanµÄÃû×Ö
+			//è·å–beançš„åå­—
 	//		String[] namesForType = applicationContext.getBeanNamesForType(Person.class);
 	//		for (String name : namesForType) {
 	//			System.out.println(name);
 	//		}
 			
-			//²é¿´ÈİÆ÷ÖĞËùÓĞµÄbean£¬getBeanDefinitionNames
+			//æŸ¥çœ‹å®¹å™¨ä¸­æ‰€æœ‰çš„beanï¼ŒgetBeanDefinitionNames
 			String[] definitionNames = applicationContext.getBeanDefinitionNames();
 			for (String name : definitionNames) {
 				System.out.println(name);

@@ -10,21 +10,21 @@ import com.ww.config.ConfigOfProfile;
 
 public class IOCTest_Profile {
 	
-	//1¡¢Ê¹ÓÃÃüÁîĞĞ¶¯Ì¬²ÎÊı: ÔÚĞéÄâ»ú²ÎÊıÎ»ÖÃ¼ÓÔØ -Dspring.profiles.active=test
-	//2¡¢´úÂëµÄ·½Ê½¼¤»îÄ³ÖÖ»·¾³£»
+	//1ã€ä½¿ç”¨å‘½ä»¤è¡ŒåŠ¨æ€å‚æ•°: åœ¨è™šæ‹Ÿæœºå‚æ•°ä½ç½®åŠ è½½ -Dspring.profiles.active=test
+	//2ã€ä»£ç çš„æ–¹å¼æ¿€æ´»æŸç§ç¯å¢ƒï¼›
 	
-	//===ÇĞ»»»·¾³µÄ×ö·¨Ò»°ã²»»áÔÚÉú²ú»·¾³ÓÃ£¬Õâ¾Í»áÈÃÃ¿¸öÈËÖªµÀÉú²ú»·¾³µÄÃÜÂë£¬Ò»°ã¶¼»áÔÚÅäÖÃÖĞĞÄ½øĞĞÅäÖÃ
+	//===åˆ‡æ¢ç¯å¢ƒçš„åšæ³•ä¸€èˆ¬ä¸ä¼šåœ¨ç”Ÿäº§ç¯å¢ƒç”¨ï¼Œè¿™å°±ä¼šè®©æ¯ä¸ªäººçŸ¥é“ç”Ÿäº§ç¯å¢ƒçš„å¯†ç ï¼Œä¸€èˆ¬éƒ½ä¼šåœ¨é…ç½®ä¸­å¿ƒè¿›è¡Œé…ç½®
 	
 	@Test
 	public void test01(){
 		AnnotationConfigApplicationContext applicationContext = 
 				new AnnotationConfigApplicationContext();
-		//1¡¢´´½¨Ò»¸öapplicationContext
-		//2¡¢ÉèÖÃĞèÒª¼¤»îµÄ»·¾³
+		//1ã€åˆ›å»ºä¸€ä¸ªapplicationContext
+		//2ã€è®¾ç½®éœ€è¦æ¿€æ´»çš„ç¯å¢ƒ
 //		applicationContext.getEnvironment().setActiveProfiles("test");
-		//3¡¢×¢²áÖ÷ÅäÖÃÀà
+		//3ã€æ³¨å†Œä¸»é…ç½®ç±»
 		applicationContext.register(ConfigOfProfile.class);
-		//4¡¢Æô¶¯Ë¢ĞÂÈİÆ÷
+		//4ã€å¯åŠ¨åˆ·æ–°å®¹å™¨
 		applicationContext.refresh();
 		
 		

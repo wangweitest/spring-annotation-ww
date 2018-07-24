@@ -20,7 +20,7 @@ public class IOCTest2 {
 	AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(MainConfig2.class);
 	
 	/**
-	 * ²âÊÔ@Import
+	 * æµ‹è¯•@Import
 	 */
 	@Test
 	public void testImport(){
@@ -28,13 +28,13 @@ public class IOCTest2 {
 		Blue bean = applicationContext.getBean(Blue.class);
 		System.out.println(bean);
 		
-		//¹¤³§Bean»ñÈ¡µÄÊÇµ÷ÓÃgetObject´´½¨µÄ¶ÔÏó
+		//å·¥å‚Beanè·å–çš„æ˜¯è°ƒç”¨getObjectåˆ›å»ºçš„å¯¹è±¡
 		Object bean2 = applicationContext.getBean("colorFactoryBean");
 		Object bean3 = applicationContext.getBean("colorFactoryBean");
-		System.out.println("beanµÄÀàĞÍ£º"+bean2.getClass());
+		System.out.println("beançš„ç±»å‹ï¼š"+bean2.getClass());
 		System.out.println(bean2 == bean3);
 		
-		//µÃµ½¹¤³§bean±¾Éí
+		//å¾—åˆ°å·¥å‚beanæœ¬èº«
 		Object bean4 = applicationContext.getBean("&colorFactoryBean");
 		System.out.println(bean4.getClass());
 	}
@@ -47,13 +47,13 @@ public class IOCTest2 {
 	}
 	
 	/**
-	 * ²âÊÔ£º@Conditional
+	 * æµ‹è¯•ï¼š@Conditional
 	 */
 	@Test
 	public void test03(){
 		String[] namesForType = applicationContext.getBeanNamesForType(Person.class);
 		ConfigurableEnvironment environment = applicationContext.getEnvironment();
-		//¶¯Ì¬»ñÈ¡»·¾³±äÁ¿µÄÖµ£»Windows 10
+		//åŠ¨æ€è·å–ç¯å¢ƒå˜é‡çš„å€¼ï¼›Windows 10
 		String property = environment.getProperty("os.name");
 		System.out.println(property);
 		for (String name : namesForType) {
@@ -72,7 +72,7 @@ public class IOCTest2 {
 			System.out.println(name);
 		}
 		
-		System.out.println("iocÈİÆ÷´´½¨Íê³É....");
+		System.out.println("iocå®¹å™¨åˆ›å»ºå®Œæˆ....");
 		Object bean = applicationContext.getBean("person");
 		Object bean2 = applicationContext.getBean("person");
 		System.out.println(bean == bean2);

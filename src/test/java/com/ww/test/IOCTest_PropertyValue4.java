@@ -17,7 +17,7 @@ public class IOCTest_PropertyValue4 {
 		Person person = (Person) applicationContext.getBean("person");
 		System.out.println(person);
 		
-		//ÅäÖÃÎÄ¼şÖĞµÄÖµÄ¬ÈÏ¶¼¼ÓÔØµ½ÁË»·¾³±äÁ¿ÖĞenvironment£¬ËùÒÔÕâÑùÒ²¿ÉÒÔÈ¥µ½Öµ
+		//é…ç½®æ–‡ä»¶ä¸­çš„å€¼é»˜è®¤éƒ½åŠ è½½åˆ°äº†ç¯å¢ƒå˜é‡ä¸­environmentï¼Œæ‰€ä»¥è¿™æ ·ä¹Ÿå¯ä»¥å»åˆ°å€¼
 		ConfigurableEnvironment environment = applicationContext.getEnvironment();
 		String property = environment.getProperty("person.nickName");
 		System.out.println(property);
